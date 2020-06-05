@@ -3,7 +3,7 @@ package com.ugurkuyu.otelapp.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ugurkuyu.otelapp.OtelRepository
+import com.ugurkuyu.otelapp.viewmodel.OtelRepository
 import com.ugurkuyu.otelapp.model.Hotels
 
 class OtelViewModel : ViewModel() {

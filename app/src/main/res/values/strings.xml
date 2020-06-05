@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Otel App</string>
+    <string name="bir_gece_toplam">1 Gece Toplam&#160;</string>
+    <string name="space">&#160;</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.ugurkuyu.otelapp
+package com.ugurkuyu.otelapp.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

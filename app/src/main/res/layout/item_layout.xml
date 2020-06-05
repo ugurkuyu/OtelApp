@@ -54,7 +54,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="@{otel.details.address.town.name + otel.details.address.city.name}"
+                android:text="@{otel.details.address.town.name + ','+ ' ' + otel.details.address.city.name}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 app:layout_constraintEnd_toStartOf="@id/chevron_right"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -108,10 +108,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="1 Gece Toplam "
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:text="@string/bir_gece_toplam"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/item_room_price"
                 app:layout_constraintTop_toBottomOf="@id/item_hotel_room_concept" />
@@ -120,20 +119,36 @@
                 android:id="@+id/item_room_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="@{otel.rooms.get(0).offers.get(0).price + otel.rooms.get(0).offers.get(0).displayedCurrency}"
+                android:text='@{String.valueOf(otel.rooms.get(0).offers.get(0).price)}'
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 app:layout_constraintBaseline_toBaselineOf="@id/item_room_price_text"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/item_price_currency"
+                app:layout_constraintHorizontal_bias="1.0"
+                tools:text="1500" />
+
+            <TextView
+                android:id="@+id/item_price_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@{otel.rooms.get(0).offers.get(0).displayedCurrency}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintBaseline_toBaselineOf="@id/item_room_price_text"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:text="1500 TL" />
+                app:layout_constraintEnd_toStartOf="@id/chevron_right"
+                app:layout_constraintHorizontal_bias="1.0"
+                tools:text="TL" />
 
             <ImageView
                 android:id="@+id/chevron_right"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:src="@drawable/ic_chevron"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
